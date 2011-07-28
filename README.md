@@ -1,16 +1,17 @@
 SalesLogix Project Upgrade Tool
 ====================================
 
-* DESCRIPTION
+## DESCRIPTION
 This is a tool for analyzing and applying model changes.  This aids in gauging model upgrade effort as well as actually performing an upgrade with support for automatic merging of some types of files.
 A powershell script is used as a front end to other utilities to reduce details the user has to manage and to make the process easier.
 
-* Initial Setup
+## Initial Setup
 Sage.Platform.Upgrade.dll, UpgradeProject.exe, UpgradeProject.ps1, and ProjectReleaseInfo.db should be placed in a SalesLogix program install folder (This tooling depends on SLX version 7.5.4.).
 Powershell script execution must be enabled on the machine by running "Set-ExecutionPolicy RemoteSigned" from a powershell command prompt.
 A folder of all SalesLogix project backups and bundles must also be provided.  This folder must be referenced in the UpgradeProject.exe.config file in the ReleaseRepositoryPath appSettings value.
+System.Data.SQLite.DLL must be copied to your install supportfiles folder (C:\Program Files (x86)\SalesLogix\SupportFiles).
 
-* USE
+## USE
  1. Open a powershell command prompt.
  1. Change to the SalesLogix install folder.
  1. Execute .\UpgradeProject [project path] [1|2|3]

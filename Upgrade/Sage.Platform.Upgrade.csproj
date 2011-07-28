@@ -12,16 +12,20 @@
     <AssemblyName>Sage.Platform.Upgrade</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\debug\</OutputPath>
+    <OutputPath>$(ProgramFiles)\SalesLogix\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -37,33 +41,33 @@
   <ItemGroup>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\NHibernate\log4net.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\SupportFiles\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\debug\Sage.Platform.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Application, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\debug\Sage.Platform.Application.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Application.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.BundleModel, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Debug\Sage.Platform.BundleModel.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.BundleModel.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.FileSystem, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\debug\Sage.Platform.FileSystem.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Projects, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\debug\Sage.Platform.Projects.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Projects.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Libraries\SQLite\System.Data.SQLite.DLL</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\SupportFiles\System.Data.SQLite.DLL</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
