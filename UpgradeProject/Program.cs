@@ -223,8 +223,6 @@ namespace UpgradeProject
             Console.WriteLine(baseEx.StackTrace);
         }
 
-        //////
-        
         private static void PerformIdentifyProjectVersionOperation()
         {
             string dbVersion = GetDbVersion();

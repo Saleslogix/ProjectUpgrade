@@ -26,7 +26,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\debug\</OutputPath>
+    <OutputPath>$(ProgramFiles)\SalesLogix\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,35 +47,35 @@
     </Reference>
     <Reference Include="Sage.Platform, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Application, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Application.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.Application.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Configuration, Version=7.5.4.6728, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Configuration.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.FileSystem, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.FileSystem.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Projects, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Projects.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.Projects.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Upgrade, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\Sage.Platform.Upgrade.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.Upgrade.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.VirtualFileSystem, Version=7.5.4.6728, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.VirtualFileSystem.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.VirtualFileSystem.dll</HintPath>
     </Reference>
     <Reference Include="Sage.SalesLogix.SchemaSupport, Version=7.5.4.7023, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.SalesLogix.SchemaSupport.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\SalesLogix\Sage.SalesLogix.SchemaSupport.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -104,6 +104,9 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="UpgradeProject.ps1">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

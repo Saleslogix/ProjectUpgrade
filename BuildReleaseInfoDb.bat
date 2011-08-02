@@ -57,3 +57,7 @@ UpgradeProject.exe /O:AddBundle /SP:"%SourcePath%\Sage SalesLogix ProblemResolut
 UpgradeProject.exe /O:AddBundle /SP:"%SourcePath%\SDataAccelerator.zip" /V:7.5.3.400
 UpgradeProject.exe /O:AddBundle /SP:"%SourcePath%\Sage SalesLogix Mobile 2011 R1.zip" /V:7.5.3.500
 UpgradeProject.exe /O:AddBundle /SP:"%SourcePath%\Sage SalesLogix Web Help Update 2011 R1 VFS.zip" /V:7.5.3.600
+
+REM 7.5.4.x
+UpgradeProject.exe /O:AddProject /SP:"ZIP:\%SourcePath%\Sage SalesLogix v7.5 SP4 Project.Backup.zip\Model" /V:7.5.4.0 /PN:"SalesLogix 7.5.4"
+UpgradeProject.exe /O:AddBundle /SP:"%SourcePath%\Sage SalesLogix Mobile v1.1.zip" /V:7.5.4.100

@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sage.Platform.Upgrade", "..\Upgrade\Sage.Platform.Upgrade.csproj", "{005C84AA-7AD3-4BFC-A794-43AFDC6FBEFD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpgradeProject", "..\UpgradeProject\UpgradeProject.csproj", "{48947818-B882-4066-9EEC-B0C3886B5CCF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{005C84AA-7AD3-4BFC-A794-43AFDC6FBEFD} = {005C84AA-7AD3-4BFC-A794-43AFDC6FBEFD}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

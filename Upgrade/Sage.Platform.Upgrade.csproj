@@ -25,7 +25,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>$(ProgramFiles)\SalesLogix\</OutputPath>
+    <OutputPath>$(ProgramFiles)\SalesLogix\Platform</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -45,23 +45,23 @@
     </Reference>
     <Reference Include="Sage.Platform, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Application, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Application.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.Application.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.BundleModel, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.BundleModel.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.BundleModel.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.FileSystem, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.FileSystem.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.FileSystem.dll</HintPath>
     </Reference>
     <Reference Include="Sage.Platform.Projects, Version=7.5.3.1005, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>$(ProgramFiles)\SalesLogix\ReferenceAssemblies\Sage.Platform.Projects.dll</HintPath>
+      <HintPath>$(ProgramFiles)\SalesLogix\Platform\Sage.Platform.Projects.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
