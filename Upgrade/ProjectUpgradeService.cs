@@ -41,7 +41,9 @@ namespace Sage.Platform.Upgrade
                                         @"\\Bundle Manifests\\",
                                         @"\\deployment\\",
                                         @"\\bundleData\.xml",
-                                        @"\\manifest\.xml"
+                                        @"\\manifest\.xml",
+                                        @"^.*\\\.svn.*",
+                                        @"^.*\\\.git\\.*"
                                     };
             _fileIgnoreRegex = new Regex(string.Join("|", pathsToIgnore));
         }
