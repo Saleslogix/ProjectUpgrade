@@ -80,6 +80,25 @@ namespace Sage.Platform.Upgrade
                     return false;
             }
 
+            if (FileIsRelationship(file))
+            {
+                Guid sourceId = GetModelItemIdFromFile(file);
+                if (sourceId == Guid.Empty)
+                    return true;
+
+                OrmRelationship baseRelationship = FindRelationshipInBaseById(sourceId, baseProject);
+                if (baseRelationship != null)
+                {
+                    var sourceRelationship = sourceProject.Get<OrmRelationship>(file.Url);
+                    var diffMerge = new ObjectDiffMerge();
+                    var changes = diffMerge.CompareObjects(sourceRelationship, baseRelationship);
+                    if (!changes.All(change => RelationshipChangeCanBeIgnored(change)))
+                        warnings.Add(string.Format("{0} is an existing SalesLogix relationship that was renamed and also modified.  This file will need to be manually merged.", file.Url));
+
+                    return false;
+                }           
+            }
+
             return true;
         }
 

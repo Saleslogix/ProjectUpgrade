@@ -399,30 +399,30 @@ namespace Sage.Platform.Upgrade
                 IFileInfo file = fileReleaseEntry.Key;
                 List<FileReleaseInfo> releases = fileReleaseEntry.Value;
 
-                if (!releases.Any())
+                if (!releases.Any()) //this url does not exist in the official repository
                 {
                     if (FileIsAValidAdd(file, baseProject, sourceProject, warnings, modelUpgradeServices))
                         addedFiles.Add(file.Url);
                 }
                 else
                 {
-                    byte[] fileHash = CalculateHashCode(file);
-                    if (!releases.Where(info => fileHash.SequenceEqual(info.Hash)).Any())
-                    {
+                    if (!FileHasReleaseMatch(file, releases))
+                    {                        
                         if (MergeFileIsAValidDiff(file, releases, baseProject, sourceProject, warnings, modelUpgradeServices))
                         {
                             IFileInfo baseFile = baseProject.Drive.GetFileInfo(file.Url);
-                            if (baseFile.Exists)
+
+                            if (!baseFile.Exists)
+                            {
+                                warnings.Add(string.Format("{0} is a file that was originally written by SalesLogix, but could not be found in the base project.  This file will need to be manually merged.", file.Url));
+                                filesToManuallyMerge.Add(file.Url);
+                            }
+                            else
                             {
                                 if (FileIsAutoMergable(file.Url, modelUpgradeServices))
                                     autoMergableFiles.Add(file.Url);
                                 else
                                     filesToManuallyMerge.Add(file.Url);
-                            }
-                            else
-                            {
-                                warnings.Add(string.Format("{0} is a file that was originally written by SalesLogix, but could not be found in the base project.  This file will need to be manually merged.", file.Url));
-                                filesToManuallyMerge.Add(file.Url);
                             }
                         }
                     }
@@ -444,6 +444,12 @@ namespace Sage.Platform.Upgrade
             warnings.ForEach(url => _log.Warn(url));
 
             return new UpgradeReport(addedFiles, autoMergableFiles, filesToManuallyMerge, warnings);
+        }
+
+        private bool FileHasReleaseMatch(IFileInfo file, List<FileReleaseInfo> releases)
+        {
+            byte[] fileHash = CalculateHashCode(file);
+            return releases.Where(info => fileHash.SequenceEqual(info.Hash)).Any();
         }
 
         private bool FileIsAutoMergable(string url, IEnumerable<IModelUpgradeService> modelUpgradeServices)
@@ -767,7 +773,7 @@ namespace Sage.Platform.Upgrade
             Version maxVersion = matchesByUrl
                 .Where(matches => matches != null && matches.Count == 1)
                 .Select(matches => matches.First())
-                .Where(match => match != null && match.Project != null)
+                .Where(match => match != null && match.Project != null && match.FileName.EndsWith(".dll", StringComparison.OrdinalIgnoreCase))
                 .Select(match => match.Project)
                 .Max(project => project.Version);
 

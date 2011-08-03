@@ -70,6 +70,8 @@ namespace Sage.Platform.Upgrade
             if (FileIsOrderCollection(file))
             {
                 IFileInfo baseFile = baseProject.Drive.GetFileInfo(file.Url);
+                if (!baseFile.Exists) //treat missing base file as valid for the moment
+                    return true;
                 byte[] currentHash = CalculateHashCode(file);
                 byte[] baseHash = CalculateHashCode(baseFile);
                 return !currentHash.SequenceEqual(baseHash);
