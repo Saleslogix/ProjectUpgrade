@@ -56,28 +56,21 @@ if ($sourcePath -like "*backup.zip")
 	$sourcePath = $newSourcePath
 }
 
-$result = 0
-
 if ($operation -eq "0")
 {
-	$result = .\UpgradeProject.exe /O:IdentifyProjectVersion /SP:"$($sourcePath)\Model"
+	.\UpgradeProject.exe /O:IdentifyProjectVersion /SP:"$($sourcePath)\Model"
 }
 elseif ($operation -eq "1")
 {
-	$result = .\UpgradeProject.exe /O:BuildBaseProject /SP:"$($sourcePath)\Model" /BP:"$($sourcePath)Base\Model"
+	.\UpgradeProject.exe /O:BuildBaseProject /SP:"$($sourcePath)\Model" /BP:"$($sourcePath)Base\Model"
 }
 elseif ($operation -eq "2")
 {
 	$reportFilePath = "$sourcePath Upgrade Report.txt"
-	$result = .\UpgradeProject.exe /O:UpgradeReport /SP:"$($sourcePath)\Model" /BP:"$($sourcePath)Base\Model" > $reportFilePath
+	.\UpgradeProject.exe /O:UpgradeReport /SP:"$($sourcePath)\Model" /BP:"$($sourcePath)Base\Model" > $reportFilePath
 	Write-Host "Upgrade report output was written to $reportFilePath"
 }
 elseif ($operation -eq "3")
 {
-	$result = .\UpgradeProject.exe /O:Upgrade /SP:"$($sourcePath)\Model" /BP:"$($sourcePath)Base\Model" /TP:"$($sourcePath)Upgraded\Model"
-}
-
-if ($result -eq -1)
-{
-	exit -1;
+	.\UpgradeProject.exe /O:Upgrade /SP:"$($sourcePath)\Model" /BP:"$($sourcePath)Base\Model" /TP:"$($sourcePath)Upgraded\Model"
 }
