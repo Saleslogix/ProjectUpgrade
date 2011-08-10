@@ -12,11 +12,12 @@ A powershell script is used as a front end to other utilities to reduce details 
 Please note that C:\Program Files\SalesLogix should be used in the instructions below instead of C:\Program Files (x86)\SalesLogix if you are using a 32-bit version of Windows.  
 1. Get and unzip ProjectUpgradeBinaries.zip and SlxOfficialReleases.zip from the regular business partner ftp site under /Upgrade_Tools/ProjectUpgrade/.  
 2. Unzip SlxOfficialReleases.zip to a folder of your choosing.  This zip contains all SalesLogix project backups and bundles going back to 7.5.0.  
-3. Place UpgradeProject.exe, UpgradeProject.exe.config, UpgradeProject.ps1, and ProjectReleaseInfo.db in the folder C:\Program Files (x86)\SalesLogix\SupportFiles.  
+3. Place UpgradeProject.exe, UpgradeProject.exe.config, UpgradeProject.ps1, ProjectReleaseInfo.db and SampleBackupRestoreConfig.xml in the folder C:\Program Files (x86)\SalesLogix.  
 4. Place Sage.Platform.Upgrade.dll in the folder C:\Program Files (x86)\SalesLogix\Platform.  
 5. Place System.Data.SQLite.DLL in the folder C:\Program Files (x86)\SalesLogix\SupportFiles.  
 6. Enable powershell script execution by opening a powershell command prompt (powershell.exe) and typing the following: Set-ExecutionPolicy RemoteSigned.  
 7. Update UpgradeProject.exe.config to reference the folder you unzipped.  The full folder path should be placed in the "ReleaseRepositoryPath" appsetting.
+8. Copy ProjectBackupRestore.exe from the install media to C:\Program Files (x86)\SalesLogix.  
 
 ## USE
  1. Open a powershell command prompt (powershell.exe).  
